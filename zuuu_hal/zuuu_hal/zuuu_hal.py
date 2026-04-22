@@ -80,7 +80,7 @@ class ZuuuHAL(Node):
     # -------------------------------------------------------------------------
 
     def _init_fake_hardware(self) -> None:
-        self.declare_parameter("fake", False)
+        self.declare_parameter("fake", False) # declaration in ROS2 -> actually setting a parameter that can be read by everyone
         self.declare_parameter("gazebo", False)
         self.declare_parameter("mujoco", False)
 
@@ -228,7 +228,8 @@ class ZuuuHAL(Node):
         self.calculated_wheel_speeds: List[float] = [0.0, 0.0, 0.0]
         self.reset_odom: bool = False
         self.battery_voltage: float = 25.0
-        self.mode = ZuuuModes.CMD_GOTO  # or CMD_VEL as preferred
+        #self.mode = ZuuuModes.CMD_GOTO  # or CMD_VEL as preferred
+        self.mode = ZuuuModes.CMD_VEL
         self.speed_service_deadline: float = 0.0
         self.speed_service_on: bool = False
         self.lidar_mandatory: bool = False

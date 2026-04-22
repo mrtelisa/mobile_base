@@ -36,7 +36,7 @@
                 <!-- <robot_namespace> </robot_namespace> -->
 
                 <!-- The odom info is used by zuuu_hal that publishes odom_zuuu and the TF -->
-                <publish_odom>true</publish_odom>
+                <publish_odometry>true</publish_odometry>
                 <publish_tf>false</publish_tf>
 
                 <!-- Frame IDs -->
@@ -44,7 +44,7 @@
                 <robot_frame>base_link</robot_frame>
 
                 <update_rate>100</update_rate>
-                <!-- <control_mode> position</control_mode> -->
+                <control_mode>velocity</control_mode>
             </plugin>
         </gazebo>
 

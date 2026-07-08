@@ -228,7 +228,7 @@ class ZuuuHAL(Node):
         self.calculated_wheel_speeds: List[float] = [0.0, 0.0, 0.0]
         self.reset_odom: bool = False
         self.battery_voltage: float = 25.0
-        self.mode = ZuuuModes.CMD_GOTO  # or CMD_VEL as preferred
+        self.mode = ZuuuModes.CMD_VEL  # or CMD_GOTO as preferred
         self.speed_service_deadline: float = 0.0
         self.speed_service_on: bool = False
         self.lidar_mandatory: bool = False

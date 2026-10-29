@@ -1,3 +1,17 @@
+> **About this fork**
+>
+> Fork of [pollen-robotics/mobile_base](https://github.com/pollen-robotics/mobile_base), modified for the Gazebo simulation used in my Master's thesis ([reachy2_teleop_grasping_and_simulation](https://github.com/mrtelisa/reachy2_teleop_grasping_and_simulation), branch `new_protocol`), where the Reachy 2 mobile base is driven through `/cmd_vel` by a body-machine interface.
+>
+> Changes on `develop`:
+> - **Velocity control by default:** `CMD_VEL` is the default mode of `zuuu_hal`, and the Gazebo planar-move plugin runs in velocity mode.
+> - **Simulation without the real lidar:** the lidar driver is not started when running in Gazebo, MuJoCo or fake mode.
+> - **Collision counter:** a contact sensor on `base_link` publishes the collisions of the base on `/reachy/contacts_state`, used to count collisions with obstacles during the experiments.
+> - **Documentation:** a section below explains how a `/cmd_vel` message reaches the simulated base, with checks for debugging.
+>
+> The rest of this README is the original documentation by Pollen Robotics.
+
+---
+
 # Packages to control the mobile base Zuuu in ROS2
 <p align="center">
   <img src="img/mobile_base.png" alt="Mobile Base" />
